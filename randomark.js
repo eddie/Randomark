@@ -1,4 +1,5 @@
 var bookmarks = [];
+var tab_id = 0;
 
 function get_bookmarks(bookmark){
   bookmark.forEach(function(child){
@@ -36,7 +37,13 @@ function random_bookmark(parent){
   var bookmark_id =  Math.floor(Math.random() * folder_bookmarks.length);
   var bookmark = folder_bookmarks[bookmark_id];
 
-  chrome.tabs.create({url: bookmark.url});
+  if(tab_id !=0 ){
+    chrome.tabs.update(tab_id,{url:bookmark.url});
+  }else{
+    chrome.tabs.create({url: bookmark.url},function(tab){
+      tab_id = tab.id;
+    });
+  }
 }
 
 
