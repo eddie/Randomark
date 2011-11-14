@@ -7,7 +7,8 @@ function get_bookmarks(bookmark){
     if(child.children){
       //console.log(child);
       if(child.title.length > 0){
-        $('#bookmark_folder').append('<option value='+child.id+'>'+child.title+'</option>');
+        var selected =(child.id == localStorage['folder'] ? ' selected':'');
+        $('#bookmark_folder').append('<option value='+child.id+selected+'>'+child.title+'</option>');
       }
       get_bookmarks(child.children);
     }else{
