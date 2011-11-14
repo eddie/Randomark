@@ -1,0 +1,49 @@
+<html>
+<head>
+  <title>Randomarks</title>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+
+  <script type="text/javascript">
+
+  var bookmarks = [];
+
+  function get_bookmarks(bookmark){
+    bookmark.forEach(function(child){
+
+      if(child.children){
+        //console.log(child);
+        if(child.title.length > 0){
+          $('#bookmark_folder').append('<option>'+child.title+'</option>');
+        }
+        get_bookmarks(child.children);
+      }else{
+        bookmarks.push(child);
+      }
+    });
+  }
+
+
+  chrome.bookmarks.getTree(function(all){
+    get_bookmarks(all);
+  });
+
+
+
+  //  chrome.tabs.create({url: bookmarkNode.url});
+  // if we have dateGroupModified then its a folder or no url
+  </script>
+
+</head>
+
+
+<body>
+
+<label for='bookmark_folder'>Choose Folder</label>
+<select id='bookmark_folder'>
+  <option>Select Folder</option>
+</select>
+
+</body>
+</html>
