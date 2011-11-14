@@ -15,7 +15,7 @@ function get_bookmarks(bookmark){
     }
   });
 }
-
+  
 chrome.bookmarks.getTree(function(all){
   get_bookmarks(all);
 });
@@ -51,7 +51,7 @@ function save_folder(){
   var folder = $("#bookmark_folder").val();
   localStorage['folder'] = folder;
 }
-
+  
 
 
 //  chrome.tabs.create({url: bookmarkNode.url});
