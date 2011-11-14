@@ -46,6 +46,9 @@ function random_bookmark(parent){
   }
 }
 
+chrome.tabs.onRemoved.addListener(function(){
+  tab_id = 0;  
+});
 
 function save_folder(){
   var folder = $("#bookmark_folder").val();
