@@ -7,17 +7,47 @@
 
   <script type="text/javascript" src='randomark.js'></script>
 
+  <style type="text/css">
+    body{
+      background:url('background.png');
+      font-family:Helvetica;
+      font-size:14px;
+      color:#666;
+    }
+    a{
+      color:#000055;
+      text-decoration:none;
+    }
+    #footer{
+      font-size:12px;
+      padding-top:10px;
+    }
+    #options{
+      padding:10px;
+      background:#fff;
+      width:280px;
+      margin:0 auto;
+      -webkit-border-radius:4px;
+      -moz-border-radius:4px;
+      border-radius:4px;
+    }
+
+  </style>
 </head>
 
 
 <body>
 
-<label for='bookmark_folder'>Choose Folder</label>
-<select id='bookmark_folder'>
-  <option value='1'>Select Folder</option>
-</select>
+<div id='options'>
+  <label for='bookmark_folder'>Choose Folder</label>
+  <select id='bookmark_folder'>
+    <option value='1'>Select Folder</option>
+  </select>
+  <button onclick='save_folder()'>Save </button>
 
-<button onclick='save_folder()'>Save </button>
+  <span style='clear:both'></span>
+  <div id='footer'>Made by <a href='http://twitter.com/EddieBluh'>EddieBluh</a>.</div>
+</div>
 
 </body>
 </html>

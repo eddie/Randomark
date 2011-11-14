@@ -50,6 +50,7 @@ function random_bookmark(parent){
 function save_folder(){
   var folder = $("#bookmark_folder").val();
   localStorage['folder'] = folder;
+  alert('Options Saved!');
 }
   
 
