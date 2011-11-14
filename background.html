@@ -24,12 +24,33 @@
     });
   }
 
-
   chrome.bookmarks.getTree(function(all){
     get_bookmarks(all);
   });
 
 
+  function bookmarks_from_folder(folder){
+    var output = [];
+    bookmarks.forEach(function(child){
+      if(child.parentId == folder){
+        output.push(child);
+      }
+    });
+    return output;
+  }
+
+  function random_bookmark(parent){
+
+    var folder_bookmarks = bookmarks_from_folder(parent);
+    var bookmark_id =  Math.floor(Math.random() * folder_bookmarks.length);
+    var bookmark = folder_bookmarks[bookmark_id];
+
+    chrome.tabs.create({url: bookmark.url});
+  }
+
+  $('#go_random').live('click',function(){
+    random_bookmark(1);  
+  });
 
   //  chrome.tabs.create({url: bookmarkNode.url});
   // if we have dateGroupModified then its a folder or no url
@@ -44,6 +65,8 @@
 <select id='bookmark_folder'>
   <option>Select Folder</option>
 </select>
+
+<a href='javascript:void(0);' id='go_random' />Randomark!</a>
 
 </body>
 </html>
