@@ -7,13 +7,6 @@
 
   <script type="text/javascript" src='randomark.js'></script>
 
-  <script type="text/javascript">
-    
-    chrome.browserAction.onClicked.addListener(function(tab){
-      random_bookmark(localStorage['folder']);  
-    });
-
-  </script>
 </head>
 
 
@@ -21,10 +14,10 @@
 
 <label for='bookmark_folder'>Choose Folder</label>
 <select id='bookmark_folder'>
-  <option>Select Folder</option>
+  <option value='1'>Select Folder</option>
 </select>
 
-<a href='javascript:void(0);' id='go_random' />Randomark!</a>
+<button onclick='save_folder()'>Save </button>
 
 </body>
 </html>

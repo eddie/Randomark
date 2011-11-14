@@ -3,10 +3,10 @@
   "version": "0.1",
   "description": "Randomly choose a book mark from a specific folder.",
   "browser_action": {
-    "default_icon": "icon.png",
-    "popup":"popup.html",
-    "background_page":"background.html"
+    "default_icon": "icon.png"
   },
+  "background_page":"background.html",
+  "options_page":"options.html",
   "permissions": [
     "bookmarks"
   ]
