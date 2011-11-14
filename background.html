@@ -9,6 +9,9 @@
 
   <script type="text/javascript">
     
+    if(!localStorage['folder']){
+      localStorage['folder'] = 1;
+    }
     chrome.browserAction.onClicked.addListener(function(tab){
       random_bookmark(localStorage['folder']);  
     });
