@@ -5,7 +5,6 @@ function get_bookmarks(bookmark){
   bookmark.forEach(function(child){
 
     if(child.children){
-      //console.log(child);
       if(child.title.length > 0){
         var selected =(child.id == localStorage['folder'] ? ' selected':'');
         $('#bookmark_folder').append('<option value='+child.id+selected+'>'+child.title+'</option>');
@@ -56,8 +55,3 @@ function save_folder(){
   localStorage['folder'] = folder;
   alert('Options Saved!');
 }
-  
-
-
-//  chrome.tabs.create({url: bookmarkNode.url});
-// if we have dateGroupModified then its a folder or no url
