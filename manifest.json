@@ -1,7 +1,7 @@
 {
   "name": "Randomarks",
-  "version": "0.1",
-  "description": "Randomly choose a book mark from a specific folder.",
+  "version": "0.2",
+  "description": "Randomly choose a webpage from all of your bookmarks or a specific folder.",
   "browser_action": {
     "default_icon": "icon.png"
   },
